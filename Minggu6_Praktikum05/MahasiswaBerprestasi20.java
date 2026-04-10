@@ -37,19 +37,33 @@ public class MahasiswaBerprestasi20 {
     // }
 
     // method selection sort berdasarkan IPK
-    void selectionSort() {
-        for (int i = 0; i < listMhs.length; i++) {
-            int idxMin = i;
-            for (int j = i + 1; j < listMhs.length; j++) {
-                if (listMhs[j].ipk < listMhs[idxMin].ipk) {
-                    idxMin = j;
-                }
-            }
-            // swap
-            Mahasiswa20 temp = listMhs[i];
-            listMhs[i] = listMhs[idxMin];
-            listMhs[idxMin] = temp;
+    // void selectionSort() {
+    //     for (int i = 0; i < listMhs.length; i++) {
+    //         int idxMin = i;
+    //         for (int j = i + 1; j < listMhs.length; j++) {
+    //             if (listMhs[j].ipk < listMhs[idxMin].ipk) {
+    //                 idxMin = j;
+    //             }
+    //         }
+    //         // swap
+    //         Mahasiswa20 temp = listMhs[i];
+    //         listMhs[i] = listMhs[idxMin];
+    //         listMhs[idxMin] = temp;
 
+    //     }
+    // }
+
+    // Method ascending insertion sort berdasarkan IPK
+    void insertionSort() {
+        for (int i = 1; i < listMhs.length; i++) {
+            Mahasiswa20 temp = listMhs[i];
+            int j = i;
+            // Ubah tanda perbandingan "<" untuk descending
+            while (j > 0 && listMhs[j-1].ipk < temp.ipk) {
+                listMhs[j] = listMhs[j - 1];
+                j--;
+            }
+            listMhs[j] = temp;
         }
     }
 }
