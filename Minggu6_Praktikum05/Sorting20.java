@@ -36,5 +36,20 @@ public class Sorting20 {
         System.out.println();
     }
 
+    // method selected sort
+    void selectionSort(){
+        for (int i = 0; i < jumData-1; i++) {
+            int min = i;
+            for (int j = i+1; j < jumData; j++) {
+                if (data[j] < data[min]) {
+                    min = j;
+                }
+            }
+            // swap
+            int temp = data[i];
+            data[i] = data[min];
+            data[min] = temp;
+        }
     
+    }
 }
