@@ -1,0 +1,38 @@
+package Minggu6_Praktikum05;
+
+public class MahasiswaBerprestasi20 {
+    Mahasiswa20 [] listMhs = new Mahasiswa20[5];
+    int idx;
+
+    // method untuk menambah data mahasiswa
+    void tambah(Mahasiswa20 m) {
+        if (idx < listMhs.length) {
+            listMhs[idx] = m;
+            idx++;
+        } else {
+            System.out.println("Data sudah penuh!");
+        }
+    }
+
+    // method untuk menampilkan data mahasiswa berprestasi
+    void tampil() {
+        for (Mahasiswa20 m : listMhs) {
+            m.tampilData();
+            System.out.println("-------------------");
+        }
+    }
+
+    // method bubble sort berdasarkan IPK
+    void bubbleSort() {
+        for (int i = 0; i < listMhs.length - 1; i++) {
+            for (int j = 1; j < listMhs.length - i; j++) {
+                if (listMhs[j].ipk < listMhs[j - 1].ipk) {
+                    // swap
+                    Mahasiswa20 temp = listMhs[j];
+                    listMhs[j] = listMhs[j - 1];
+                    listMhs[j - 1] = temp;
+                }
+            }
+        }
+    }
+}
