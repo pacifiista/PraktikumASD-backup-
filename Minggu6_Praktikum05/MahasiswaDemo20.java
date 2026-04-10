@@ -18,8 +18,12 @@ public class MahasiswaDemo20 {
         System.out.println("Data Mahasiswa Berprestasi sebelum diurutkan:");
         list.tampil();
 
-        System.out.println("Data Mahasiswa Berprestasi setelah diurutkan berdasarkan IPK:");
-        list.bubbleSort();
+        // System.out.println("Data Mahasiswa Berprestasi setelah diurutkan berdasarkan bubble sort IPK:");
+        // list.bubbleSort();
+        // list.tampil();
+
+        System.out.println("Data Mahasiswa Berprestasi setelah diurutkan berdasarkan Selection Sort IPK:");
+        list.selectionSort();
         list.tampil();
     }
 }

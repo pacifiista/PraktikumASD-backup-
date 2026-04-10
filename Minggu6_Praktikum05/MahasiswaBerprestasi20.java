@@ -23,16 +23,33 @@ public class MahasiswaBerprestasi20 {
     }
 
     // method bubble sort berdasarkan IPK
-    void bubbleSort() {
-        for (int i = 0; i < listMhs.length - 1; i++) {
-            for (int j = 1; j < listMhs.length - i; j++) {
-                if (listMhs[j].ipk < listMhs[j - 1].ipk) {
-                    // swap
-                    Mahasiswa20 temp = listMhs[j];
-                    listMhs[j] = listMhs[j - 1];
-                    listMhs[j - 1] = temp;
+    // void bubbleSort() {
+    //     for (int i = 0; i < listMhs.length - 1; i++) {
+    //         for (int j = 1; j < listMhs.length - i; j++) {
+    //             if (listMhs[j].ipk < listMhs[j - 1].ipk) {
+    //                 // swap
+    //                 Mahasiswa20 temp = listMhs[j];
+    //                 listMhs[j] = listMhs[j - 1];
+    //                 listMhs[j - 1] = temp;
+    //             }
+    //         }
+    //     }
+    // }
+
+    // method selection sort berdasarkan IPK
+    void selectionSort() {
+        for (int i = 0; i < listMhs.length; i++) {
+            int idxMin = i;
+            for (int j = i + 1; j < listMhs.length; j++) {
+                if (listMhs[j].ipk < listMhs[idxMin].ipk) {
+                    idxMin = j;
                 }
             }
+            // swap
+            Mahasiswa20 temp = listMhs[i];
+            listMhs[i] = listMhs[idxMin];
+            listMhs[idxMin] = temp;
+
         }
     }
 }
