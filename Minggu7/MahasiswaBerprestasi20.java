@@ -3,7 +3,6 @@ package Minggu7;
 public class MahasiswaBerprestasi20 {
     Mahasiswa20 [] listMhs = new Mahasiswa20[5];
     int idx;
-
     // method untuk menambah data mahasiswa
     void tambah(Mahasiswa20 m) {
         if (idx < listMhs.length) {
@@ -22,16 +21,20 @@ public class MahasiswaBerprestasi20 {
         }
     }
 
-    // method sequential search 
-    int sequentialSearching(double cari) {
-        int posisi = -1;
-        for (int i = 0; i < listMhs.length; i++) {
-            if (listMhs[i].ipk == cari) {
-                posisi = i;
-                break;
+    // method binary search
+    int findBinarySearch(double cari, int left, int right){
+        int mid;
+        if (right >= left) {
+            mid = (left + right) / 2;
+            if (cari == listMhs[mid].ipk) {
+                return mid;
+            } else if (cari < listMhs[mid].ipk) {
+                return findBinarySearch(cari, left, mid - 1);
+            } else {
+                return findBinarySearch(cari, mid + 1, right);
             }
         }
-        return posisi;
+        return -1;
     }
 
     // method tampil posisi mahasiswa yang dicari
@@ -55,6 +58,21 @@ public class MahasiswaBerprestasi20 {
             System.out.println("Data mahasiswa dengan IPK " + x + " tidak ditemukan");
         }
     }
+    // method sequential search 
+    // int sequentialSearching(double cari) {
+    //     int posisi = -1;
+    //     for (int i = 0; i < listMhs.length; i++) {
+    //         if (listMhs[i].ipk == cari) {
+    //             posisi = i;
+    //             break;
+    //         }
+    //     }
+    //     return posisi;
+    // }
+
+    
+
+    
 
     // method bubble sort berdasarkan IPK
     // void bubbleSort() {

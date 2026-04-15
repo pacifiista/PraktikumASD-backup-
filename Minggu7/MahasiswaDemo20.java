@@ -32,9 +32,9 @@ public class MahasiswaDemo20 {
         String cariIp = sc.nextLine();
         double cari = Double.parseDouble(cariIp);
 
-        System.out.println("menggunakan sequential searching");
-        double posisi = list.sequentialSearching(cari);
-        int pss= (int) posisi;
+        System.out.println("menggunakan binary searching");
+        double posisi2 = list.findBinarySearch(cari, 0, jumMhs - 1);
+        int pss= (int) posisi2;
         list.tampilPosisi(cari, pss);
         list.tampilDataSearch(cari, pss);
     }
