@@ -1,8 +1,13 @@
 package Minggu7;
 
 public class MahasiswaBerprestasi20 {
-    Mahasiswa20 [] listMhs = new Mahasiswa20[5];
+    Mahasiswa20 [] listMhs;
     int idx;
+    // constructor
+    MahasiswaBerprestasi20(int jumMhs) {
+        listMhs = new Mahasiswa20[jumMhs];
+        idx = 0;
+    }
     // method untuk menambah data mahasiswa
     void tambah(Mahasiswa20 m) {
         if (idx < listMhs.length) {
