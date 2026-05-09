@@ -16,7 +16,7 @@ public class Main20 {
         // Data Buku
         Buku20[] buku = {
             new Buku20("B001", "Algoritma", 2020),
-            new Buku20("B002", "Basis Data", 2019),
+            new Buku20("B002", "Basis Data", 2019), 
             new Buku20("B003", "Pemrograman", 2021),
             new Buku20("B004", "Fisika", 2024)
         };
@@ -90,6 +90,7 @@ public class Main20 {
                 case 5:
                     //sequential search
                     System.out.print("Masukkan NIM: ");
+                    sc.nextLine(); // membersihkan buffer
                     String cariNim = sc.nextLine();
                     boolean ketemu = false;
                     for (Peminjaman20 p : peminjaman) {

@@ -129,6 +129,6 @@ public class Main20 {
                         System.out.println(m.nama + ": " + rataRata + " hari");
                     }
             }
-        } while (pilih != 0);
+        } while (pilih != 0); 
     }
 }

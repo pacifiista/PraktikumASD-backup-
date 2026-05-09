@@ -1,4 +1,4 @@
-package CM1;
+package ModifUTS;
 
 public class Peminjaman20 {
     // atribut
@@ -25,11 +25,14 @@ public class Peminjaman20 {
         if (lamaPinjam > batasPinjam) {
             terlambat = lamaPinjam - batasPinjam; // hitung jumlah hari terlambat
             denda = terlambat * 2000; // hitung total denda
+            System.out.println("terlambat " + terlambat + " hari, denda: Rp " + denda);
         } else {
             terlambat = 0;
             denda = 0;
-            
+            System.out.println("tidak terlambat");
         }
+        
+        
     }
 
     // method untuk menampilkan data peminjaman
@@ -37,9 +40,23 @@ public class Peminjaman20 {
         System.out.println(mhs.nama + " | " + buku.judulBuku +
                 " | Lama: " + lamaPinjam +
                 " | Terlambat: " + terlambat +
-                " | Denda: " + denda );
+                " | Denda: " + denda
+                + " | Status: " + status()); // tambahin ini jg buat status
     }
 
-    
+    //modif e warda
+    // Method untukk menambahkan total denda
+    int totalDenda(int totalDenda) {
+        return totalDenda + denda; // menambahkan denda setiap peminjaman ke total denda
+    } 
+
+    // Status peminjaman
+    String status() {
+        if (lamaPinjam > batasPinjam) {
+            return "Terlambat";
+        } else {
+            return "Tepat Waktu";
+        }
+    }
     
 }

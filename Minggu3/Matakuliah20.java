@@ -1,3 +1,4 @@
+package Minggu3;
 import java.util.Scanner;
 public class Matakuliah20 {
     // atribut
