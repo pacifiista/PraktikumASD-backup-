@@ -56,11 +56,22 @@ public class MahasiswaDemo20 {
                     stack.print();
                     break;
 
+                case 5: // No. 4 modifikasi liat tugas terbawah (data yang pertama kali masuk)
+                    Mahasiswa20 lihatBawah = stack.peekBottom();
+                    if (lihatBawah != null) {
+                        System.out.println("Tugas terbawah dikumpulkan oleh " + lihatBawah.nama);
+                    }
+                    break;
+
+                case 6: // no 5 modifikasi hitung jumlah tugas saat ini
+                    System.out.println("Jumlah tugas saat ini: " + stack.jmlTugas());
+                    break;
+
                 default:
-                    if (pilih < 1 || pilih > 4) {
+                    if (pilih < 1 || pilih > 6) {
                         System.out.println("Pilihan tidak valid.");
                     }
             }
-        } while (pilih >= 1 && pilih <= 4); 
+        } while (pilih >= 1 && pilih <= 6);
     }
 }
