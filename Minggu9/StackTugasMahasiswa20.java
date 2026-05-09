@@ -46,17 +46,24 @@ public class StackTugasMahasiswa20 {
         }
     }
 
-    public Mahasiswa20 peek() {
+    // No. 4 modifikasi liat tugas terbawah (data yang pertama kali masuk)
+    public Mahasiswa20 peekBottom() {
         if (!isEmpty()) {
-            return stack[top];
+            return stack[0]; // melihat tugas terbawah (data yang pertama kali masuk)
         } else {
             System.out.println("Stack kosong! Tidak ada tugas yang bisa dilihat.");
             return null;
         }
     }
 
+    // no 5 modifikasi hitung jumlah tugas saat ini
+    public int jmlTugas() {
+        return top + 1; // jumlah tugas saat ini adalah indeks top + 1
+    }
+
     public void print() {
-        for (int i = 0; i <= top; i++) {
+        // perbaikan kode agar LIFO (last in first out) sesuai dengan konsep stack
+        for (int i = top; i >= 0; i--) {
             System.out.println(stack[i].nama + "\t" + stack[i].nim + "\t" + stack[i].kelas);
         }
         System.out.println("");

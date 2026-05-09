@@ -20,7 +20,7 @@ public class Mahasiswa20 {
     // method tugasDinilai
     void tugasDinilai(int nilai) {
         this.nilai = nilai;
-    }
+    } 
 
     
 }
