@@ -2,7 +2,7 @@ package P2Jobsheet10;
 
 
 public class AntrianLayanan20 {
-    Mahasiswa20[] data; // Disamakan menjadi Mahasiswa20
+    Mahasiswa20[] data; 
     int front;
     int rear;
     int size; 

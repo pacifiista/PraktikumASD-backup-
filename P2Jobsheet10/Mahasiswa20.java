@@ -1,6 +1,7 @@
 package P2Jobsheet10;
 
 public class Mahasiswa20 {
+    // Atribut Mahasiswa
     String nim;
     String nama;
     String prodi;
@@ -19,4 +20,4 @@ public class Mahasiswa20 {
     public void tampilkanData() {
         System.out.println(nim + " - " + nama + " -" + prodi + " -" + kelas);
     }
-}
+} 

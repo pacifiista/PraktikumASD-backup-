@@ -19,7 +19,7 @@ public class LayananAkademik20 {
             System.out.println("0. Keluar");
             System.out.print("Pilih menu: ");
             pilihan = sc.nextInt();
-            sc.nextLine(); // Membersihkan buffer
+            sc.nextLine(); 
 
             switch (pilihan) {
                 case 1:
