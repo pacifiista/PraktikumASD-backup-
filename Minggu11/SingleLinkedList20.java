@@ -85,4 +85,101 @@ public class SingleLinkedList20 {
             }
         }
     }
+
+    // method getData
+    void getData(int index) {
+        Node20 tmp = head;
+        for (int i = 0; i < index; i++) {
+            if (tmp != null) {
+                tmp = tmp.next;
+            }
+        }
+        if (tmp != null) {
+            tmp.data.tampilkanInformasi();
+        } else {
+            System.out.println("Indeks tidak valid");
+        }
+    }
+
+    // method indexOf
+    int indexOf(String key) {
+        Node20 temp = head;
+        int index = 0;
+        while (temp != null && !temp.data.nama.equalsIgnoreCase(key)) {
+            temp = temp.next;
+            index++;
+        } 
+        if (temp != null) {
+            return -1; // Ditemukan, kembalikan indeks
+        } else {
+            return index; // Jika tidak ditemukan
+        }
+    }
+
+    // method removeFirst
+    void removeFirst() {
+        if (IsEmpty()) {
+            System.out.println("Linked list kosong, tidak ada yang dihapus");
+        } else if (head == tail) { // Hanya ada satu node
+                head = null;
+                tail = null;
+            } else {
+                head = head.next; // Pindahkan head ke node berikutnya
+            }
+    }
+    
+     // method removeLast
+    void removeLast() {
+        if (IsEmpty()) {
+            System.out.println("Linked list kosong, tidak ada yang dihapus");
+        } else if (head == tail) { // Hanya ada satu node
+                head = null;
+                tail = null;
+            } else {
+                Node20 temp = head;
+                while (temp.next != tail) {
+                    temp = temp.next; // Cari node sebelum tail
+                }
+                temp.next = null; // Putuskan hubungan dengan tail lama
+                tail = temp;      // Pindahkan tail ke node sebelumnya
+            }
+        }
+        // method remove
+    void remove(String key) {
+        if (IsEmpty()) {
+            System.out.println("Linked list kosong, tidak ada yang dihapus");
+        } else {
+            Node20 temp = head;
+            while (temp.next != null) {
+                if (temp.data.nama.equalsIgnoreCase(key) && (temp == head)) { // Jika node yang akan dihapus adalah head
+                   this.removeFirst(); // Panggil method removeFirst untuk menghapus head
+                    break;
+                } else if (temp.next.data.nama.equalsIgnoreCase(key)) { 
+                    temp.next = temp.next.next; // Putuskan hubungan dengan node yang dihapus
+                    if (temp.next == null) { // Jika node yang dihapus adalah tail
+                        tail = temp; // Pindahkan tail ke node sebelumnya
+                    }
+                    break;
+                }
+                temp = temp.next;
+            }
+        }
+    }
+
+    // method removeAt
+    void removeAt (int index) {
+        if (index == 0) {
+            removeFirst();
+        } else {
+            Node20 temp = head;
+            for (int i = 0; i < index - 1; i++) {
+                temp = temp.next;
+                
+            }
+            temp.next = temp.next.next; // Putuskan hubungan dengan node yang dihapus
+            if (temp.next == null) { // Jika node yang dihapus adalah tail
+                tail = temp; // Pindahkan tail ke node sebelumnya
+            }
+        }
+    }
 }
