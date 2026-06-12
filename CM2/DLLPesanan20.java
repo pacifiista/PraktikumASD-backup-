@@ -54,5 +54,24 @@ public class DLLPesanan20 {
         }
         System.out.println("Total Pendapatan: " + total);
     }
+
+    // modifikasi Pesanan Termahal OPSI 1 SESI 3
+    void pesananTermahal(){
+        if (head == null) {
+            System.out.println("Belum ada pesanan");
+            return;
+        }
+        nodePesanan20 current = head;
+        Pesanan20 max = head.data;
+        while(current != null) {
+            if(current.data.harga > max.harga) {
+                max = current.data;
+            
+            }
+            current = current.next;
+        }
+        System.out.println("Pesanan termahal:");
+        System.out.println(max.kodePesanan + " | " + max.namaPesanan + " | " + max.harga); // menampilkan pesanan termahal
+    }
     
 }

@@ -15,7 +15,8 @@ public class main20 {
             System.out.println("2. Cetak Antrian");
             System.out.println("3. Layani Pembeli");
             System.out.println("4. Laporan Pesanan");
-            System.out.println("5. Keluar");
+            System.out.println("5. Pesanan Termahal"); // modifikasi menu 5 "Menu Termahal"
+            System.out.println("6. Keluar");
             System.out.print("Pilih Menu: ");
             pilih = sc.nextInt();
             sc.nextLine();
@@ -66,8 +67,13 @@ public class main20 {
                     System.out.println("\nLAPORAN PESANAN");
                     daftarPesanan.tampilPesanan();
                     break;
-                
-                case 5:
+
+                case 5: //modifikasi menu 5 "Menu Termahal"
+                    System.out.println("\nPESANAN TERMAHAL");
+                    daftarPesanan.pesananTermahal();
+                    break;
+
+                case 6:
                     System.out.println("Program selesai");
                     break;
                 
